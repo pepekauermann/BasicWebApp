@@ -22,12 +22,18 @@ public class QueryProcessor {
 
         } else if (query.contains("largest")) {
             int [] numbers = zahlen(query);
-            Integer max = Arrays.stream(numbers).max().orElseThrow(NoSuchElementException::new)
-            return max.toString();
+            int max = Arrays.stream(numbers).max().orElseThrow(NoSuchElementException::new);
+            return String.valueOf(max);
 
+        } if (query.contains("plus")){
+            int [] numbers = zahlen(query);
+            int sum = Arrays.stream(numbers).sum();
+            String antwort;
+            antwort = String.valueOf(sum);
+            return antwort;
 
-
-        } else { // TODO extend the programm here
+        }
+        else { // TODO extend the programm here
             return "";
         }
     }
